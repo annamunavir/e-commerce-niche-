@@ -1,0 +1,21 @@
+.add_product{
+  width:100vw;
+  height:100vh;
+  margin: 10px 0px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  padding:10px !important;
+  width:200px !important ;
+  background-color:rgb(78, 110, 72) !important ;
+  border: none !important;
+  margin:20px 0px !important;
+}
+
+.form_input{
+  padding:0px !important;
+}

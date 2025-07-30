@@ -1,0 +1,169 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.admin_sidebar {
+  width: 15vw;
+  /* height:90vh;  */
+  /* max-height: 100vh; */
+  border-radius: 12px;
+  border: 1px solid grey;
+  margin: 10px 8px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  transition: width 0.3s ease;
+  position: relative;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+
+.sidebar_menu ul,
+.sidebar_logout ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin_sidebar ul li {
+  padding: 10px;
+}
+
+.admin_sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text-label {
+  transition: opacity 0.3s ease;
+}
+
+/* Dropdown Styles */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-arrow {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+/* Submenu */
+.submenu {
+  margin-left: 25px;
+  padding-left: 10px;
+  border-left: 2px solid #ddd;
+}
+
+.submenu li {
+  margin: 10px 0;
+}
+
+.submenu li a {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.submenu li a:hover {
+  color: #007bff;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  z-index: 1100;
+}
+
+/* ============================= */
+/* Tablet View (≤1024px): Icons only, expand on hover */
+@media (max-width: 1024px) {
+  .admin_sidebar {
+    width: 60px;
+  }
+
+  .text-label,
+  .dropdown-arrow {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .admin_sidebar:hover {
+    width: 220px;
+  }
+
+  .admin_sidebar:hover .text-label,
+  .admin_sidebar:hover .dropdown-arrow {
+    opacity: 1;
+    width: auto;
+    pointer-events: auto;
+  }
+}
+
+/* ============================= */
+/* Mobile View (≤768px): Collapsible sidebar with toggle */
+@media (max-width: 425px) {
+  .hamburger {
+    display: block;
+  }
+
+  .admin_sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    background-color: #fff;
+    border: none;
+  }
+
+  .admin_sidebar.open {
+    width: 220px;
+    border-right: 1px solid #ccc;
+  }
+
+  .text-label {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .sidebar {
+    padding-bottom: 50px;
+  }
+}

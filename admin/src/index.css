@@ -1,0 +1,48 @@
+
+/* 
+/* Kill any auto-added list arrows or bullets */
+.sidebar_menu li::marker,
+.sidebar_menu li::before,
+.sidebar_menu li::after,
+.dropdown-header::marker,
+.dropdown-header::before,
+.dropdown-header::after {
+  content: none !important;
+  display: none !important;
+} */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: outfit;
+  max-width: 100vw;
+  min-height: 100vh;
+
+}
+body{
+  min-height: 100vh;
+  background-color: #fcfcfc;
+
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+hr{
+  border: none;
+  height: 1px;
+  background-color: #a9a9a9;
+}
+.app-content{
+  display: flex;
+   
+}
+
+
+
+.app_container{
+  display:flex ;
+}
+

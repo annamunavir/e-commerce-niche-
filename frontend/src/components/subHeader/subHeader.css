@@ -1,0 +1,40 @@
+.subheader-navbar {
+  background-color: transparent !important;
+  padding-top: 5px;
+  box-shadow: none;
+  margin-top: 2px !important;
+}
+
+.input-group input {
+  border-radius: 20px 0 0 20px;
+}
+
+.input-group .btn {
+  border-radius: 0 20px 20px 0;
+}
+
+.nav-icons .nav-icon {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-icons .nav-icon:hover {
+  color: #d63384; /* You can use any accent color */
+}
+
+/* ✅ Cart Badge */
+.cart-icon {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: rgb(173, 127, 127);
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}

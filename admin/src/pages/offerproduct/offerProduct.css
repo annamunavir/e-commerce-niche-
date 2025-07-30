@@ -1,0 +1,8 @@
+.list_product{
+   width: 100vw;
+   height: 100vh;
+  margin: 15px 0px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  overflow: hidden;
+}

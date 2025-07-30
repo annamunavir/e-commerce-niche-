@@ -1,0 +1,35 @@
+.login{
+  min-height: 94vh;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+.login_form{
+ width: 50%;
+ 
+
+}
+.button_login{
+  width: 200px;
+  background-color:rgb(12, 59, 69)  ;
+  border: none;
+  
+}
+.button_login:hover{
+ background-color:#a8dadc !important ;
+ color: black;
+}
+
+.Form_input{
+ background: transparent !important;
+ outline: none !important;
+ 
+}
+
+@media (max-width: 576px) {
+ 
+  .title{
+   margin: 20px !important;
+  }
+}

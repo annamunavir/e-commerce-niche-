@@ -1,0 +1,29 @@
+.login_popup{
+  /* min-width: 30vw !important;
+  position: absolute;
+  place-self: center;
+  left:45%;
+  top:20%;
+  z-index:1;
+  width:30vw;
+  display: flex; 
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+  padding:2rem;
+  border-radius: 12px;
+  border: 1px solid grey;
+  background-color: rgb(255, 254, 252); */
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.login_popup::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,32 @@
+.editCategory{
+   width:100vw;
+  height:100vh;
+  margin: 10px 0px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-category {
+  max-width: 900px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+
+
+}
+
+
+.edit-category h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.edit-category .preview img {
+  border-radius: 8px;
+  margin-top: 10px;
+}

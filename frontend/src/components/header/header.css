@@ -1,0 +1,33 @@
+/* #FFB6C1  #AAF0D1 #D8BFD8	#FFFACD #ACE1AF*/
+.header{
+  background-color: #e9c3c9	   ;
+}
+.profile-icon {
+ 
+  width: 40px;
+  height: 40px;
+  background-color: #e2e6ea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.profile-icon:hover {
+  background-color: #cfd4d9;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.custom-navbar {
+  background-color: #a8dadc !important; /* pastel purple */
+}
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: #333 !important; /* or #000 for darker text */
+}

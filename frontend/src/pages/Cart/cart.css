@@ -1,0 +1,19 @@
+.quantity_button {
+  text-align: center;
+  border: none;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  color:black;
+}
+
+@media (max-width: 576px) {
+  .quantity_button {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .cart-summary {
+    margin-top: 20px;
+  }
+}

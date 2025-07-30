@@ -1,0 +1,94 @@
+/* latest.css */
+
+.latest_products {
+  padding: 1rem;
+  background-color: #fefefe;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.latest_row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Scroll buttons */
+.arrow-side {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2;
+  color: #444;
+  padding: 0 10px;
+}
+
+/* Hide arrows on mobile for better UX */
+@media (max-width: 576px) {
+  .arrow-side {
+    display: none;
+  }
+}
+
+.products-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Product list container */
+.products {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 32px; /* extra padding for mobile to avoid clipping */
+  scroll-snap-type: x mandatory;
+}
+
+.products::-webkit-scrollbar {
+  display: none;
+}
+.products {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Product card container */
+.product-card-container {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Mobile view - show 1 full card centered */
+@media (max-width: 576px) {
+  .products {
+    justify-content: flex-start;
+  }
+
+  .product-card-container {
+    min-width: 80vw;
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet - show 2 cards at a time */
+@media (min-width: 577px) and (max-width: 768px) {
+  .product-card-container {
+    min-width: 45vw;
+  }
+}
+
+/* Desktop - show 4 cards */
+@media (min-width: 769px) {
+  .product-card-container {
+    min-width: 16rem;
+  }
+}

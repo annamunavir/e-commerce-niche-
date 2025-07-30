@@ -1,0 +1,64 @@
+.popular_products {
+  margin: 20px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.heading {
+  text-align: center;
+  margin: 50px;
+}
+
+/* Layout row for arrows + products */
+.popular_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Arrows on each end */
+.arrow-side {
+  background-color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product scroll container */
+.products-wrapper {
+  overflow: hidden;
+  width:500px;
+  /* border:1px solid black;
+  max-width: 1000px; */
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.products {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.products::-webkit-scrollbar {
+  display: none;
+}
+
+.products > * {
+  flex: 0 0 calc(25% - 7.5px); /* 4 cards, 10px gap */
+  scroll-snap-align: start;
+}

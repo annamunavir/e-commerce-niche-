@@ -1,0 +1,20 @@
+.listCategory{
+   width: 100vw;
+   height: 100vh;
+  margin: 15px 0px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+.list-categories h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+.list-categories table {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.list-categories img {
+  border-radius: 8px;
+}
