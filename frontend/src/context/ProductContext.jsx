@@ -17,8 +17,8 @@ const ProductContext = ({ children }) => {
   const [searchProducts, setSearchProducts] = useState([])
   const [shortList, setShortList] = useState([])
   const [cart,setCart]=useState([])
-  const url = "http://localhost:3000/api";
-  const user_url = "http://localhost:3000"
+  const url = "https://e-commerce-niche-backend.onrender.com/api";
+  const user_url = "https://e-commerce-niche-backend.onrender.com"
  const [user,setUser]=useState(null)
 
 
