@@ -6,16 +6,17 @@ import { useNavigate } from 'react-router-dom';
 
 const AddProduct = ({ setNav }) => {
   const navigate = useNavigate();
-
   const [categories, setCategories] = useState([]);
   const [subcategories, setSubcategories] = useState([]);
+  const {user_url } = useContext(AuthContext);
+
 
   useEffect(() => {
     setNav(false);
 
     const fetchCategories = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/categories');
+        const res = await axios.get(`${user_url}/api/categories`);
         setCategories(res.data);
       } catch (err) {
         console.error('Error fetching categories:', err);
@@ -78,7 +79,7 @@ const AddProduct = ({ setNav }) => {
     }
 
     try {
-      const res = await axios.post('http://localhost:3000/api/products', data, {
+      const res = await axios.post(`${user_url}/api/products`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
