@@ -1,5 +1,5 @@
 import './listProduct.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
 import { Table, Button, Container, Image, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -14,10 +14,11 @@ const ListProducts = ({ setNav }) => {
   const [search, setSearch] = useState('');
   const [page, SetPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+   const {user_url } = useContext(AuthContext);
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/products?page=${page}&limit=5`);
+      const res = await axios.get(`${user_url}/api/products?page=${page}&limit=5`);
       setProducts(res.data.products);
       setTotalPages(res.data.totalPages);
     } catch (err) {
@@ -28,7 +29,7 @@ const ListProducts = ({ setNav }) => {
   const handleDelete = async (id) => {
     
       try {
-        await axios.delete(`http://localhost:3000/api/products/${id}`);
+        await axios.delete(`${user_url}/api/products/${id}`);
         fetchProducts();
       } catch (err) {
         console.error('Delete error:', err);
@@ -45,8 +46,8 @@ const ListProducts = ({ setNav }) => {
     setSearch(value);
     try {
       const endPoint = value === ''
-        ? `http://localhost:3000/api/products?page=${page}&limit=5`
-        : `http://localhost:3000/api/products/search?query=${value}`;
+        ? `${user_url}/api/products?page=${page}&limit=5`
+        : `${user_url}/api/products/search?query=${value}`;
       const response = await axios.get(endPoint);
       setProducts(response.data.products ? response.data.products : response.data);
 
