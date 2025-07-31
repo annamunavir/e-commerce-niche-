@@ -6,7 +6,7 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('admintoken') || '');
   const [showLoginPopup, setShowLoginPopup] = useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true); // true: Login, false: Signup
-
+   const user_url ="https://e-commerce-niche-backend.onrender.com"
   useEffect(() => {
     if (token) {
       localStorage.setItem('admintoken', token);
@@ -22,7 +22,8 @@ const AuthProvider = ({ children }) => {
     showLoginPopup,
     setShowLoginPopup,
     showLoginForm,
-    setShowLoginForm
+    setShowLoginForm,
+    user_url
   }
   return (
     <AuthContext.Provider value={value}>
