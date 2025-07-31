@@ -1,5 +1,5 @@
 import './offerProduct.css'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
 import { Table, Button, Container, Image, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +13,7 @@ const OfferProduct = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/products?page=${page}&limit=4`);
+      const res = await axios.get(`${user_url}/api/products?page=${page}&limit=4`);
       setProducts(res.data.products);
       setTotalPages(res.data.totalPages)
     } catch (err) {
@@ -26,7 +26,7 @@ const OfferProduct = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
-        await axios.delete(`http://localhost:3000/api/products/${id}`);
+        await axios.delete(`${user_url}/api/products/${id}`);
         fetchProducts();
       } catch (err) {
         console.error('Delete error:', err);
@@ -46,26 +46,14 @@ const OfferProduct = () => {
   }, [page]);
 
 
-  // const handleSearch = async (e) => {
-  //   const value = e.target.value
-  //   // setSearch(search)
-  //   try {
-  //     const endPoint = value.trim() === " " ? "http://localhost:3000/api/products?page=${page}&limit=4" : `http://localhost:3000/api/products/search?query=${value}`;
-  //     const response = await axios.get(endPoint)
-  //     setProducts(response.data);
-  //   } catch (error) {
-  //     console.log(err);
-
-  //   }
-
-  // }
+  
    const handleSearch = async (e) => {
     const value = e.target.value.trim();
     setSearch(value);
     try {
       const endPoint = value === ''
-        ? `http://localhost:3000/api/products?page=${page}&limit=5`
-        : `http://localhost:3000/api/products/search?query=${value}`;
+        ? `${user_url}/api/products?page=${page}&limit=5`
+        : `${user_url}/api/products/search?query=${value}`;
       const response = await axios.get(endPoint);
       setProducts(response.data.products ? response.data.products : response.data);
 
