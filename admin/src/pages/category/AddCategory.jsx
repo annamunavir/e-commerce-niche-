@@ -13,6 +13,8 @@ const AddCategory = ({setNav}) => {
     subCategory: '',
     image: null
   });
+      const {user_url } = useContext(AuthContext);
+
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -32,7 +34,7 @@ const AddCategory = ({setNav}) => {
     payload.append('image', formData.image);
 
     try {
-      const res = await axios.post('http://localhost:3000/api/categories', payload);
+      const res = await axios.post(`${user_url}/api/categories`, payload);
       alert('✅ Category added successfully');
       setFormData({
         category: '',
