@@ -13,6 +13,8 @@ const EditCategory = ({ setNav }) => {
     image: '',
   });
   const [newImageFile, setNewImageFile] = useState(null);
+    const {user_url } = useContext(AuthContext);
+
 
   useEffect(() => {
     setNav(false);
@@ -21,7 +23,7 @@ const EditCategory = ({ setNav }) => {
 
   const fetchCategory = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/categories/${id}`);
+      const res = await axios.get(`${user_url}/api/categories/${id}`);
       setFormData({
         category: res.data.category,
         subCategory: res.data.subCategory.join(', '),
@@ -52,7 +54,7 @@ const EditCategory = ({ setNav }) => {
         sendData.append('image', newImageFile);
       }
 
-      const res = await axios.put(`http://localhost:3000/api/categories/${id}`, sendData);
+      const res = await axios.put(`${user_url}/api/categories/${id}`, sendData);
       alert('✅ Category updated successfully!');
       navigate('/categories');
     } catch (err) {
