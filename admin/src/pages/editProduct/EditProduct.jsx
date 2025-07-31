@@ -17,6 +17,7 @@ const subcategoryMap = {
 
 const EditProduct = ({ setNav }) => {
   const [newImage, setNewImage] = useState(null); // ✅ single image file
+   const {user_url } = useContext(AuthContext);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const EditProduct = ({ setNav }) => {
 
   const fetchProduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/products/${id}`);
+      const res = await axios.get(`${user_url}/api/products/${id}`);
       setFormData(res.data);
     } catch (err) {
       console.error('Error fetching product:', err);
@@ -89,7 +90,7 @@ const EditProduct = ({ setNav }) => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:3000/api/products/${id}`, data, {
+      const response = await axios.put(`${user_url}/api/products/${id}`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
