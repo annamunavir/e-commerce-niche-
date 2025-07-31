@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../models/user'); // 👈 match the actual filename
 
 const adminAuth = async (req, res, next) => {
   try {
