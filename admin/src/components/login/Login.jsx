@@ -35,7 +35,7 @@ const Login = () => {
  const handleLoginSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await axios.post(`http://localhost:3000/login`, loginData);
+    const response = await axios.post(`${user_url}/login`, loginData);
     const token = response.data.token;
     const role = response.data.role;
 
@@ -60,7 +60,7 @@ const Login = () => {
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/register', signUpData);
+      const response = await axios.post(`${user_url}/register`, signUpData);
       console.log(response.data.message); // ✅ Fix: use .data
       setShowLoginForm(true);
       alert("Registration successful! You can now log in.");
