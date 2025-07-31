@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 const Categories = ({ setNav }) => {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+    const { user_url } = useContext(AuthContext);
+
 
   useEffect(() => {
     setNav(false);
@@ -15,7 +17,7 @@ const Categories = ({ setNav }) => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:3000/api/categories');
+      const res = await axios.get(`${user_url}/api/categories`);
       setCategories(res.data);
     } catch (err) {
       console.error('Failed to fetch categories:', err);
@@ -25,7 +27,7 @@ const Categories = ({ setNav }) => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this category?')) {
       try {
-        await axios.delete(`http://localhost:3000/api/categories/${id}`);
+        await axios.delete(`${user_url}/api/categories/${id}`);
         fetchCategories();
       } catch (err) {
         console.error('Delete error:', err);
