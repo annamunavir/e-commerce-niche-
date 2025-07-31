@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 const OfferProduct = () => {
   const navigate = useNavigate()
   const [products, setProducts] = useState([]);
-    const [page,SetPage]=useState(1)
-    const [totalPages,setTotalPages]=useState(1)
+  const [page,SetPage]=useState(1)
+  const [totalPages,setTotalPages]=useState(1)
   const [search,setSearch]=useState("")
+  const {user_url} = useContext(AuthContext);
 
   const fetchProducts = async () => {
     try {
