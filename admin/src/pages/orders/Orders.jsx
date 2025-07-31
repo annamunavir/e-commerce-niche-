@@ -5,7 +5,7 @@ import './orders.css';
 import { AuthContext } from '../../context/AuthContext';
 
 const Orders = ({ setNav }) => {
-  const { token } = useContext(AuthContext);
+  const { token,user_url } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,7 +18,7 @@ const Orders = ({ setNav }) => {
     setNav(false);
     const fetchOrders = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/orders', {
+        const res = await axios.get(`${user_url}/api/orders`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(res.data);
@@ -35,7 +35,7 @@ const Orders = ({ setNav }) => {
   const handleStatusChange = async (orderId, field, value) => {
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/orders/${orderId}/status`,
+        `${user_url}/api/orders/${orderId}/status`,
         { [field]: value },
         {
           headers: { Authorization: `Bearer ${token}` },
