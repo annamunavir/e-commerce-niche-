@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Header from './components/header/Header'
 import Footer from './components/footer/Footer'
-import Login from './pages/Login/Login'
 import Products from './pages/products/Products'
 import SingleProduct from './pages/singleProduct/SingleProduct'
 import Cart from './pages/Cart/Cart'
@@ -30,7 +29,6 @@ const {nav,subNav}=useContext(productContext)
       <Routes>
         <Route path="/login" element={<LoginComponent />} />
         <Route path="/" element={<Home />} />
-        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />} />
