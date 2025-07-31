@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Order = require('../models/orders');
 const auth = require('../middleware/auth');
-const User = require('../models/User');
+const User = require('../models/user'); // 👈 match the actual filename
 const adminAuth = require('../middleware/adminAuth');
 
 // -------------------------------------------

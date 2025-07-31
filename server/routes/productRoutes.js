@@ -131,48 +131,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 
-// ************ UPDATE PRODUCT ************
-// router.put('/:id', upload.single('image'), async (req, res) => {
-//   try {
-//     const { id } = req.params;
 
-//     if (!mongoose.Types.ObjectId.isValid(id)) {
-//       return res.status(400).json({ message: 'Invalid product ID' });
-//     }
-
-//     const existingProduct = await Product.findById(id);
-//     if (!existingProduct) {
-//       return res.status(404).json({ message: 'Product not found' });
-//     }
-
-//     // Image handling
-//     const imageUrl = req.file?.path || existingProduct.image;
-
-//     // Prepare updated fields
-//     const updatedFields = {
-//       ...req.body,
-//       image: imageUrl,
-//     };
-
-//     // Convert number fields safely
-//     updatedFields.price = Number(updatedFields.price) || 0;
-//     updatedFields.stock = Number(updatedFields.stock) || 0;
-
-//     if (updatedFields.offerPercentage === '' || updatedFields.offerPercentage === null || updatedFields.offerPercentage === undefined) {
-//       updatedFields.offerPercentage = null;
-//     } else {
-//       updatedFields.offerPercentage = Number(updatedFields.offerPercentage);
-//     }
-
-//     const updatedProduct = await Product.findByIdAndUpdate(id, updatedFields, { new: true });
-
-//     res.json({ message: 'Product updated successfully', product: updatedProduct });
-
-//   } catch (err) {
-//     console.error('❌ Error updating product:', err.message);
-//     res.status(500).json({ message: 'Server error while updating product' });
-//   }
-// });
 
 router.put('/:id', upload.single('image'), async (req, res) => {
   try {
