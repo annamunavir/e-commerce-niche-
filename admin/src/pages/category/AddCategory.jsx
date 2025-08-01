@@ -2,6 +2,7 @@ import './addcategory.css'
 import React, { useEffect, useState,useContext } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import axios from 'axios';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const AddCategory = ({setNav}) => {

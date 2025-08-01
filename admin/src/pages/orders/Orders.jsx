@@ -15,7 +15,7 @@ const Orders = ({ setNav }) => {
 
   // 🔁 Fetch orders
   useEffect(() => {
-    setNav(false);
+   
     const fetchOrders = async () => {
       try {
         const res = await axios.get(`${user_url}/api/orders`, {

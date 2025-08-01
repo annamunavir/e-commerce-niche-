@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Image } from 'react-bootstrap';
 import axios from 'axios';
 import './editCategories.css'
+import { AuthContext } from '../../context/AuthContext';
 const EditCategory = ({ setNav }) => {
   const { id } = useParams();
   const navigate = useNavigate();

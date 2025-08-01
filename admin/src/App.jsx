@@ -18,7 +18,9 @@ import EditCategory from './pages/editCategories/EditCategories';
 
 function App() {
   const [nav, setNav] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const toggleSidebar = () => setSidebarOpen(prev => !prev);
   // 👇 using context instead of props
   const {
     token,
@@ -31,9 +33,9 @@ function App() {
 
   return (
     <div>
-      {nav && <Header />}
+      {nav && <Header toggleSidebar={toggleSidebar}  />}
       <div className='app_container'>
-        <Sidebar />
+        <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
         {/* 👇 Only show login popup if requested */}
         {showLoginPopup && (

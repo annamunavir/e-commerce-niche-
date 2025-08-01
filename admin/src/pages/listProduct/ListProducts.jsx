@@ -3,10 +3,11 @@ import React, { useEffect, useState,useContext } from 'react';
 import { Table, Button, Container, Image, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 const ListProducts = ({ setNav }) => {
   useEffect(() => {
-    setNav(false);
+    // setNav(false);
   }, [setNav]);
 
   const navigate = useNavigate();

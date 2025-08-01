@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Form, Button, Container } from 'react-bootstrap';
 import axios from 'axios';
 import './editProduct.css';
+import { AuthContext } from '../../context/AuthContext';
 
 const subcategoryMap = {
   Toys: ['Educational', 'Soft Toys', 'Remote Control', 'Outdoor'],

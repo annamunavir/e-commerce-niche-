@@ -3,12 +3,60 @@
    height: 100vh;
   margin: 15px 0px;
   border-radius: 10px;
-  border: 1px solid gray;
-    padding-bottom: 40px;
+  /* border: 1px solid gray; */
+  padding-bottom: 40px;
 overflow: hidden;
 }
 
 .product-table td {
   vertical-align: middle;
   height: 100px;
+}
+.list_product {
+  width: 100%;
+  padding: 20px;
+}
+
+.product-table th, .product-table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .product-table th, .product-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .product-table img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .list_product h2 {
+    font-size: 20px;
+  }
+
+  .list_product button {
+    font-size: 12px;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .list_product{
+    border: none;
+  }
+  .product-table th, .product-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .list_product form input {
+    font-size: 14px;
+  }
+
+  .list_product h2 {
+    font-size: 18px;
+  }
 }

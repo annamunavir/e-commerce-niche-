@@ -1,9 +1,9 @@
 .add_product{
   width:100vw;
-  height:100vh;
+  min-height:100vh;
   margin: 10px 0px;
   border-radius: 10px;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,3 +19,4 @@
 .form_input{
   padding:0px !important;
 }
+

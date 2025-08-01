@@ -3,5 +3,72 @@
   min-height: 100vh;
   margin: 15px 0px;
   border-radius: 10px;
-  border: 1px solid gray;
+}
+.orders h4 {
+  font-weight: 600;
+  text-align: center;
+}
+
+.orders table th,
+.orders table td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+/* Improve dropdown and layout on small screens */
+@media (max-width: 768px) {
+
+  .orders{
+    width: 100%;
+    border: none;
+  }
+  .orders table th,
+  .orders table td {
+    font-size: 13px;
+    padding: 8px;
+    white-space: normal;
+  }
+
+  .orders h4 {
+    font-size: 20px;
+  }
+
+  .orders .form-select {
+    font-size: 13px;
+    padding: 4px;
+    width: 100%;
+    min-width: 100px;
+  }
+
+  .orders button {
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .orders table th,
+  .orders table td {
+    font-size: 12px;
+    padding: 6px;
+    white-space: normal;
+  }
+
+  .orders h4 {
+    font-size: 18px;
+  }
+
+  .orders .form-select {
+    font-size: 12px;
+    padding: 4px;
+    width: 100%;
+    min-width: 90px;
+  }
+
+  .orders button {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
 }
